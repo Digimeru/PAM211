@@ -1,0 +1,65 @@
+package a;
+import java.util.Scanner;
+
+public class inicioPAM {
+
+static void Reglamento(){
+	System.out.println("\n---Reglamento---");
+	System.out.println("1. Respeto \r\n"
+			+ "2. Importante participación activa en orden.\r\n"
+			+ "3. No entregar trabajos incompletos.\r\n"
+			+ "4. No se aplican examen fuera de tiempo"
+			+ "5. Plagio de trabajos = 0 para todos.\r\n"
+			+ "6. 3 faltas = final del parcial. \r\n"
+			+ "7. Calificación Máxcima en final 8.");	
+}
+	
+
+static void LineamientosClassroom() {
+	System.out.println("\n---Lineamientos Classroom---");
+	System.out.println("1. Entregar los trabajos para su revisión.\r\n"
+			+ "2.Entregar en PDF.\r\n"
+			+ "3. Avisos de clase.\r\n"
+			+ "4. Entregas autorizadas con retraso, 5 Calif Max.");
+	
+}
+
+static void FechasDeParciales() {
+	System.out.println("\n---Fechas parciales---");
+	System.out.println("1er Parcial: 29-09-25\n" + "2do Parcial: 03-11-25\r\n" 
+			+ "3er parcial: 01-12-25\n" + "Final:       08-12-25");
+	
+}
+static void PorcentajesporParcial(){
+	System.out.println("\n--Porcentajes--          c  1P   2P   3P\r\n"
+			+ "Evidencia de conocimiento   40%   40%   20%\r\n"
+			+ "Evidencia de desempeño      20%   20%   10%\r\n"
+	        + "Evidencia de producto       30%   20%   40%\r\n"
+	        + "PI                          10%   20%   30%");
+}
+	
+
+	public static void main (String [] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ingrese lo que desea busca");
+		System.out.println("\n1.- Reglamento POO" + "\n2.- Lineamientos Classroom" + "\n3.- Fechas de Parciales" + "\n4.- Porcentajes por parcial");
+		int a = scanner.nextInt();
+		
+		switch(a) {
+			case 1:
+				Reglamento();
+				break;
+			case 2:
+				LineamientosClassroom();
+				break;
+			case 3:
+				FechasDeParciales();
+				break;
+			case 4:
+				PorcentajesporParcial();
+				break;
+			default:
+				break;	
+		}
+	}
+}
