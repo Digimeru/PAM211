@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Text, StyleSheet, View, Button } from 'react-native'
+import React, { useState } from 'react';
+import { Text, StyleSheet, View, Button } from 'react-native';
 import ContadorScreen from './ContadorScreen';
 import BotonesScreen from './BotonesScreen';
 import TextInputScreen from './TextInputScreen';
