@@ -16,11 +16,15 @@ export default function BotonesScreen() {
         <Text style={[styles.text, {color: textColor}]}> Estado: {prendido ? 'Prendido' : 'Apagado'} </Text> 
 
         <TouchableOpacity style={styles.botonEncender} onPress={()=> setPrendido(true)}>
-        <Text style = {styles.textoBoton}> Prender </Text> 
+
+          <Text style = {styles.textoBoton}> Prender </Text> 
+          
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.botonApagar} onPress={()=> setPrendido(false)}> 
-        <Text style = {styles.textoBoton}> Apagar </Text> 
+
+          <Text style = {styles.textoBoton}> Apagar </Text> 
+
         </TouchableOpacity>
 
         <View style = {styles.switchContainer}>
