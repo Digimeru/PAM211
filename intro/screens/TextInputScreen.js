@@ -10,9 +10,9 @@ export default function TextInputScreen() {
   const mostrarAlerta = () => {
     if ((nombre.trim() === '')||(contraseña.trim() === '')||(comentario.trim() === '')) {
       if (Platform.OS === 'web'){
-        window.alert('Error, por favor ingrese su nombre');
+        window.alert('Error, por favor complete los campos');
       } else{
-        Alert.alert('Error, por favor ingrese su nombre');
+        Alert.alert('Error, por favor complete los campos');
       }}
       else{
         if (Platform.OS === 'web'){
