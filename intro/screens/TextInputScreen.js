@@ -34,6 +34,8 @@ export default function TextInputScreen() {
       placeholder='Ingrese una contraseña' 
       secureTextEntry={true} 
       value={contraseña} 
+      keyboardType='numeric' 
+      maxLength={8}  
       onChangeText={setConstraseña}> 
       </TextInput>
 
