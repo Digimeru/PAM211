@@ -4,10 +4,11 @@ import React, { useState } from 'react'
 export default function TextInputScreen() {
 
   const [nombre, setNombre] = useState('')
-  const [contraseña, setConstraseña] = useState('')
+  const [contraseña, setConstraseña] = useState('') 
+  const [comentario, setComentario] = useState('') 
 
   const mostrarAlerta = () => {
-    if (nombre.trim() === ''){
+    if ((nombre.trim() === '')||(contraseña.trim() === '')||(comentario.trim() === '')) {
       if (Platform.OS === 'web'){
         window.alert('Error, por favor ingrese su nombre');
       } else{
@@ -41,6 +42,8 @@ export default function TextInputScreen() {
       placeholder='Ingrese un comentario'
       multiline={true}
       numberOfLines={4}
+      value={comentario}
+      onChangeText={setComentario}
       maxLength={200}>
       </TextInput>
 
