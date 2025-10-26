@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, Alert, TextInput, Platform, ImageBackground, Dimensions, TouchableOpacity, Image, ActivityIndicator } from 'react-native'
+import { Text, StyleSheet, View, Alert, TextInput, Platform, ImageBackground, Dimensions, TouchableOpacity, Image, ActivityIndicator, Switch } from 'react-native'
 import React, { useState } from 'react'
 
 
@@ -88,14 +88,14 @@ export default function LoginScreen({ navigation }) {
             />
 
             <View style={styles.acceptRow}>
-                <TouchableOpacity
-                    style={styles.checkboxOuter}
-                    onPress={() => setAcceptedTerms(prev => !prev)}
-                    accessibilityLabel="Aceptar términos y condiciones"
-                >
-                    {acceptedTerms && <View style={styles.checkboxInner} />}
-                </TouchableOpacity>
                 <Text style={styles.acceptText}>Aceptar términos y condiciones</Text>
+                <Switch
+                    value={acceptedTerms}
+                    onValueChange={setAcceptedTerms}
+                    trackColor={{ false: '#767577', true: '#81b0ff' }}
+                    thumbColor={acceptedTerms ? '#007bff' : '#f4f3f4'}
+                    ios_backgroundColor="#3e3e3e"
+                />
             </View>
 
             <TouchableOpacity
@@ -159,30 +159,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 20,
         width: '80%',
-    },
-
-    checkboxOuter: {
-        width: 28,
-        height: 28,
-        borderRadius: 14,
-        borderWidth: 2,
-        borderColor: '#666',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginRight: 10,
-        backgroundColor: '#fff',
-    },
-
-    checkboxInner: {
-        width: 14,
-        height: 14,
-        borderRadius: 7,
-        backgroundColor: '#007bff',
+        justifyContent: 'space-between',
     },
 
     acceptText: {
         fontSize: 16,
         color: '#222',
+        flex: 1,
+        marginRight: 10,
     },
 
     registerButton: {
