@@ -9,7 +9,7 @@ export default function Profile({navigation}) {
                 <Ionicons name="home-outline" size={28} color="green"/>
                 <Text style={styles.title}>Perfil de usuario</Text>
                 <Pressable onPress={() => navigation.navigate('Detalle')}>
-                    <Ionicons name="details-outline" size={28} color="green"/>
+                    <Ionicons name="ellipsis-horizontal" size={28} color="blue"/>
                 </Pressable>
             </View>
         </View>
