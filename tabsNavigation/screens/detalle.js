@@ -1,12 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 
-export default function Home() {
+export default function Detalle() {
     return(
         <View style={styles.container}>
             <View style={styles.iconRow}>
-                <Ionicons name="home-outline" size={28} color="red"/>
-                <Text style={styles.title} >Bienvenido a la pantalla principal</Text>
+                <Text style={styles.title}> Detalle de usuario </Text>
+                <Text style={styles.body}> Usando Navegacion Stack </Text>
             </View>
         </View>
     );
@@ -29,6 +28,11 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         marginLeft: 10,
-        color: 'red'
+        color: 'black',
     },
-});
+    body: {
+        fontSize: 16,
+        marginTop: 10,
+        color: 'blue'
+    },
+})

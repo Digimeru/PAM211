@@ -1,17 +1,22 @@
-import { View, Text, StyleSheet } from 'react-native';
-import Ioicons from 'react-native-vector-icons/Ionicons';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
-export default function Profile() {
+export default function Profile({navigation}) {
     return(
+
         <View style={styles.container}>
             <View style={styles.iconRow}>
-                <Ioicons name="home-outline" size={28} color="green"/>
+                <Ionicons name="home-outline" size={28} color="green"/>
                 <Text style={styles.title}>Perfil de usuario</Text>
+                <Pressable onPress={() => navigation.navigate('Detalle')}>
+                    <Ionicons name="arrow-forward-circle-outline" size={28} color="green"/>
+                </Pressable>
             </View>
         </View>
     );
 
 }
+
 
 const styles = StyleSheet.create({
     container: {

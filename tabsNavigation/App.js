@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
 import Home from './screens/home';
-import Profile from './screens/profile';
+import ProfileDeta from './screens/profileDeta';
 import Settings from './screens/settings';
 
 const Tab = createBottomTabNavigator();
@@ -30,10 +30,11 @@ export default function App() {
         })}
         >
           <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="Profile" component={Profile} />
+          <Tab.Screen name="Profile" component={ProfileDeta} />
           <Tab.Screen name="Settings" component={Settings} />
 
       </Tab.Navigator>
+
     </NavigationContainer>
   );
 }
