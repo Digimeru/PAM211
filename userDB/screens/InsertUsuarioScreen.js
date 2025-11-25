@@ -72,12 +72,12 @@ export default function InsertUsuarioScreen() {
       </View>
       <View style={styles.userInfo}>
         <Text style={styles.userName}>{item.nombre}</Text>
-        <Text style={styles.userId}>{item.id}</Text>
+        <Text style={styles.userId}>ID: {item.id}</Text>
         <Text style={styles.userDate}>
           {new Date(item.fechaCreacion).toLocaleDateString('es-MX', {
             year: 'numeric',
             month: 'long',
-            dat: 'numeric'
+            day: 'numeric'
           })}
         </Text>
       </View>
