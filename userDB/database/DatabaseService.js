@@ -56,6 +56,35 @@ class DatebaseService {
             };
         }
     }
+
+    async delete (id){
+        if (Platform.OS === 'web'){
+            const usuarios = await this.getAll();
+            const usuariosFiltrados = usuarios.filter(u => u.id !== id);
+            localStorage.setItem(this.storageKey, JSON.stringify(usuariosFiltrados));
+        } else {
+            await this.db.runAsync(
+                'DELETE FROM usuarios WHERE id = ?',
+                id
+            );
+        }
+    }
+
+    async edit (id, nuevoNombre){
+        if (Platform.OS === 'web'){
+            const usuarios = await this.getAll();
+            const usuarioIndex = usuarios.findIndex(u => u.id === id);
+            if (usuarioIndex !== -1){
+                usuarios[usuarioIndex].nombre = nuevoNombre;
+                localStorage.setItem(this.storageKey, JSON.stringify(usuarios));
+            }
+        } else {
+            await this.db.runAsync(
+                'UPDATE usuarios SET nombre = ? WHERE id = ?',
+                [nuevoNombre, id]
+            );
+        }
+    }
 }
 
 

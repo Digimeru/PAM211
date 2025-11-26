@@ -39,6 +39,28 @@ export class UsuarioController{
         }
     }
 
+    async editarUsuario(id, nuevoNombre){
+        try{
+            Usuario.validar(nuevoNombre);
+            await DatabaseService.edit(id, nuevoNombre.trim());
+
+            this.notifyListeners();
+        } catch (error){
+            console.error('Error al editar usuario:', error);
+            throw error;
+        }
+    }
+
+    async eliminarUsuario(id){
+        try{
+            await DatabaseService.delete(id);
+            this.notifyListeners();
+        } catch (error){
+            console.error('Error al eliminar usuario:', error);
+            throw error;
+        }
+    }
+
     addListener(callback){
         this.listeners.push(callback);
     }
